@@ -97,7 +97,7 @@ Route::group(['prefix' => 'relatorios'], function ()
 
     Route::get('/produtos-mais-buscados-filtro', 'RelatorioController@produtosMaisPesquisadosView')->name('relatorio.produto.mais.pesquisado.view');
     Route::post('/produtos-mais-buscados', 'RelatorioController@produtosMaisPesquisados')->name('relatorio.produto.mais.pesquisado');
-    Route::post('/produtos-mais-buscados', 'RelatorioController@produtosMaisPesquisadosCloud')->name('relatorio.produto.mais.pesquisado');
+    
 
     Route::get('/faturamento-loja-filtro/{idLoja}', 'RelatorioController@faturamentoLojaView')->name('relatorio.faturamento.loja.view');
     Route::post('/faturamento-loja', 'RelatorioController@faturamentoLoja')->name('relatorio.faturamento.loja');
