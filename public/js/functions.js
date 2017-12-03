@@ -303,12 +303,20 @@ function montaGraficoProdutosMaisPesquisadosCloud(dados) {
 
     $('#relatorioProdutosMaisPesquisadosCloud').css('display', 'block');
 
-    var text = [];
+    var text = '';
+    var i = [];
 
     $.each(dados, function (index, value) {
-	text[index] = value.produto
-	
+	text[index] = value.produto	
     });
+	
+    $.each(dados, function (index, value) {
+        i[index] = parseInt(value.total)
+	    for (var k = 0; k <> i; k++) {
+   		  text += value.produto+', '
+		}
+    });
+	
 
     text.sort(compare);
 
