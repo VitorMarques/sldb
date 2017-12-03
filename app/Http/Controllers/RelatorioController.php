@@ -87,7 +87,7 @@ class RelatorioController extends Controller
         $lista = $this->relatorioService->geraRelatorioProdutosMaisPesquisadosCloud($parametros);
         
         return $produtos;
-        return $lista 
+        return $lista;
     }
 
     public function faturamentoLojaView($idLoja)
