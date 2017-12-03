@@ -289,6 +289,55 @@ function montaGraficoProdutosMaisPesquisados(dados) {
 	}]
 });
 chart.render();
+	
+ montaGraficoProdutosMaisPesquisadosCloud(data);
+
+}
+
+function montaGraficoProdutosMaisPesquisadosCloud(dados) {
+
+    if(dados.length<=0) {
+        alert('Nao existem dados suficientes para gerar o relatorio do periodo informado!'); return;
+    }
+
+    $('#relatorioProdutosMaisPesquisadosCloud').css('display', 'block');
+
+    var text = [];
+
+    $.each(dados, function (index, value) {
+        dataPoints[index] = value.produto
+    });
+
+    dataPoints.sort(compare);
+
+    
+    var lines = text.split(/[,\. ]+/g),
+        data = Highcharts.reduce(lines, function (arr, word) {
+            var obj = Highcharts.find(arr, function (obj) {
+                return obj.name === word;
+            });
+            if (obj) {
+                obj.weight += 1;
+            } else {
+                obj = {
+                    name: word,
+                    weight: 1
+                };
+                arr.push(obj);
+            }
+            return arr;
+        }, []);
+
+    Highcharts.chart('relatorioProdutosMaisPesquisadosCloud', {
+        series: [{
+            type: 'wordcloud',
+            data: data,
+            name: 'Ocorrências'
+        }],
+        title: {
+            text: 'Nuvem de produtos pesquisados'
+        }
+    });
 
 }
 
