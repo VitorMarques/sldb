@@ -242,6 +242,7 @@ function geraRelatorioProdutosMaisPesquisados(url, token) {
         data: data,
         success: function (data) {
             montaGraficoProdutosMaisPesquisados(data);
+	    montaGraficoProdutosMaisPesquisadosCloud(data);
         },
         error: function (data) {
             alert(data.responseJSON.error);
@@ -250,29 +251,6 @@ function geraRelatorioProdutosMaisPesquisados(url, token) {
 
 }
 
-function geraRelatorioProdutosMaisPesquisadosCloud(url, token) {
-
-    var dataIni = $('#dataIni').val();
-    var dataFim = $('#dataFim').val();
-
-    if(!dataIni || !dataFim)
-        alert('Favor informar o periodo para geracao do relatorio');
-
-    var data = {'dataIni': dataIni, 'dataFim': dataFim, '_token': token};
-
-    $.ajax({
-        method: 'POST',
-        url: url,
-        data: data,
-        success: function (data) {
-            montaGraficoProdutosMaisPesquisadosCloud(data);
-        },
-        error: function (data) {
-            alert(data.responseJSON.error);
-        }
-    });
-
-}
 
 function montaGraficoProdutosMaisPesquisados(dados) {
 
@@ -327,7 +305,7 @@ function montaGraficoProdutosMaisPesquisadosCloud(dados) {
     var text = [];
 
     $.each(dados, function (index, value) {
-        text[index] = value.produto
+        text[index] = value.texto
     });
 
     text.sort(compare);
