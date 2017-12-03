@@ -248,7 +248,6 @@ function geraRelatorioProdutosMaisPesquisados(url, token) {
         }
     });
 
-	montaGraficoProdutosMaisPesquisadosCloud(data);
 }
 
 
@@ -291,6 +290,8 @@ function montaGraficoProdutosMaisPesquisados(dados) {
 	}]
 });
 chart.render();	
+	
+	montaGraficoProdutosMaisPesquisadosCloud(dados);
 
 }
 
