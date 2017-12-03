@@ -241,14 +241,14 @@ function geraRelatorioProdutosMaisPesquisados(url, token) {
         url: url,
         data: data,
         success: function (data) {
-            montaGraficoProdutosMaisPesquisados(data);
-	    montaGraficoProdutosMaisPesquisadosCloud(data);
+            montaGraficoProdutosMaisPesquisados(data);	    
         },
         error: function (data) {
             alert(data.responseJSON.error);
         }
     });
 
+	montaGraficoProdutosMaisPesquisadosCloud(data);
 }
 
 
