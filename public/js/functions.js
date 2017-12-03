@@ -308,7 +308,7 @@ function montaGraficoProdutosMaisPesquisadosCloud(dados) {
 	
     $.each(dados, function (index, value) {
         i = parseInt(value.total)
-	    for (var k = 0; k == i; k++) {
+	    for (var k = 0; parseInt(k) == i; k++) {
    		  text += value.produto+','
 		}
 	    
