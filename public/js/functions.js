@@ -305,7 +305,6 @@ function montaGraficoProdutosMaisPesquisadosCloud(dados) {
     var text = [];
 
     $.each(dados, function (index, value) {
-        text[value] = value.total
 	text[index] = value.produto
 	
     });
@@ -317,7 +316,7 @@ function montaGraficoProdutosMaisPesquisadosCloud(dados) {
                 return obj.name === word;
             });
             if (obj) {
-                obj.weight += arr;
+                obj.weight += 1;
             } else {
                 obj = {
                     name: word,
