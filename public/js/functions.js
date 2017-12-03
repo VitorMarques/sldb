@@ -194,7 +194,7 @@ function montaGraficoLojasMaisVenderam(dados) {
             '<td><strong><a class="text-info" href="/relatorios/faturamento-loja-filtro/'+value.id_loja+'">'+value.nome_fantasia+'</a></strong></td>' +
             '<td>R$ '+ parseFloat(value.valor_vendas).toLocaleString()+'</td>' +
             '<td>R$ '+parseFloat(value.comissao_site).toLocaleString()+'</td></tr>';
-        totalComissao += parseFloat(value.comissao_site).toLocaleString();
+        totalComissao += parseFloat(value.comissao_site);
     });
 
     htmlTabela += '<tr><td colspan="3"></td><td>Total: <span class="text-success"><strong>R$ '+parseFloat(totalComissao).toLocaleString()   +'</strong></span></td></tr>';
