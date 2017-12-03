@@ -63,7 +63,7 @@ class RelatorioService extends Service
     public function geraRelatorioProdutosMaisPesquisadosCloud($parametros)
     {
 
-        $termosPesquisa = DB::select('SELECT distinct text
+        $termosPesquisa = DB::select('SELECT distinct texto
                                             FROM tb_pesquisa_produto
                                             WHERE created_at BETWEEN :dataIni AND :dataFim
                                             ;', ['dataIni' => $parametros['dataIni'], 'dataFim' => $parametros['dataFim']]);
