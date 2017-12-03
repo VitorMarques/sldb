@@ -87,6 +87,13 @@ class RelatorioController extends Controller
         return $produtos;
     }
     
+     public function produtosMaisPesquisadosCloudView()
+    {
+        return view('relatorio.produtos-mais-pesquisados')
+            ->with('display', 'none');
+    }
+
+    
     public function produtosMaisPesquisadosCloud()
     {
         $parametros = Request::except('_token');
