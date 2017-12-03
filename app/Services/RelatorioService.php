@@ -65,8 +65,8 @@ class RelatorioService extends Service
 
         $termosPesquisa = DB::select('SELECT distinct text
                                             FROM tb_pesquisa_produto
-                                            WHERE tpp.created_at BETWEEN :dataIni AND :dataFim;
-                                            ', ['dataIni' => $parametros['dataIni'], 'dataFim' => $parametros['dataFim']]);
+                                            WHERE created_at BETWEEN :dataIni AND :dataFim
+                                            ;', ['dataIni' => $parametros['dataIni'], 'dataFim' => $parametros['dataFim']]);
 
         return $termosPesquisa;
 
