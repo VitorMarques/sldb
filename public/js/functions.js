@@ -188,7 +188,7 @@ function montaGraficoLojasMaisVenderam(dados) {
     var totalComissao = 0;
 
     $.each(dados, function (index, value) {
-        dataPoints[index] = {'y': parseFloat(value.valor_vendas).toLocaleString(), 'label': value.nome_fantasia}
+        dataPoints[index] = {'y': parseInt(value.valor_vendas).toLocaleString(), 'label': value.nome_fantasia}
         htmlTabela += '<tr>' +
             '<td>'+value.id_loja+'</td>' +
             '<td><strong><a class="text-info" href="/relatorios/faturamento-loja-filtro/'+value.id_loja+'">'+value.nome_fantasia+'</a></strong></td>' +
