@@ -268,20 +268,27 @@ function montaGraficoProdutosMaisPesquisados(dados) {
 
     var chart = new CanvasJS.Chart("chartContainer", {
         animationEnabled: true,
-        exportEnabled: true,
-        title:{
-            text:"Produtos mais Pesquisados no Site"
-        },
-        data: [{
-            type: "pie",
-            startAngle: 240,
-            yValueFormatString: "##0\"x\"",
-            indexLabel: "{label} {y}",
-            dataPoints: dataPoints
-        }]
-    });
-
-    chart.render();
+	
+	title:{
+		text:"Produtos mais pesquisados"
+	},
+	axisX:{
+		interval: 1
+	},
+	axisY2:{
+		interlacedColor: "rgba(1,77,101,.2)",
+		gridColor: "rgba(1,77,101,.1)",
+		title: "Número de pesquisas"
+	},
+	data: [{
+		type: "bar",
+		name: "termosPesquisados",
+		axisYType: "secondary",
+		color: "#014D65",
+		dataPoints: dataPoints
+	}]
+});
+chart.render();
 
 }
 
