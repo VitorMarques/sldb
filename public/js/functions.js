@@ -310,8 +310,6 @@ function montaGraficoProdutosMaisPesquisadosCloud(dados) {
 
     text.sort(compare);
 
-    
-    var lines = text.split(/[,\. ]+/g);
         data = Highcharts.reduce(lines, function (arr, word) {
             var obj = Highcharts.find(arr, function (obj) {
                 return obj.name === word;
