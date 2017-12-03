@@ -68,7 +68,7 @@ class RelatorioService extends Service
                                             WHERE created_at BETWEEN :dataIni AND :dataFim
                                             ;', ['dataIni' => $parametros['dataIni'], 'dataFim' => $parametros['dataFim']]);
 
-        return $termosPesquisa;
+        return $lista;
 
     }
 
