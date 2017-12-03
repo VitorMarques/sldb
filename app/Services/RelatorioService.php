@@ -59,6 +59,18 @@ class RelatorioService extends Service
         return $termosPesquisa;
 
     }
+    
+    public function geraRelatorioProdutosMaisPesquisados($parametros)
+    {
+
+        $termosPesquisa = DB::select('SELECT distinct text
+                                            FROM tb_pesquisa_produto
+                                            WHERE tpp.created_at BETWEEN :dataIni AND :dataFim;
+                                            ', ['dataIni' => $parametros['dataIni'], 'dataFim' => $parametros['dataFim']]);
+
+        return $termosPesquisa;
+
+    }
 
     public function geraRelatorioProdutosMaisVendidosPorLoja($parametros)
     {
