@@ -290,7 +290,7 @@ function montaGraficoProdutosMaisPesquisados(dados) {
 });
 chart.render();
 	
- montaGraficoProdutosMaisPesquisadosCloud(data);
+ montaGraficoProdutosMaisPesquisadosCloud(dados);
 
 }
 
