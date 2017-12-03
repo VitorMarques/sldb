@@ -37,7 +37,7 @@
                 <button type="button"
                         class="btn btn-primary btn-sm"
                         style="margin-top: 25px"
-                        onclick="geraRelatorioProdutosMaisPesquisados('{{action('RelatorioController@produtosMaisPesquisados')}}', '{{csrf_token()}}')">
+                        onclick="geraRelatorioProdutosMaisPesquisados('{{action('RelatorioController@produtosMaisPesquisados')}}', '{{csrf_token()}}'); geraRelatorioProdutosMaisPesquisadosCloud('{{action('RelatorioController@produtosMaisPesquisadosCloud')}}', '{{csrf_token()}}')">
                     Gerar Relat&oacute;rio
                 </button>
             </div>
