@@ -305,10 +305,6 @@ function montaGraficoProdutosMaisPesquisadosCloud(dados) {
 
     var text = '';
     var i = [];
-
-    $.each(dados, function (index, value) {
-	text[index] = value.produto	
-    });
 	
     $.each(dados, function (index, value) {
         i[index] = parseInt(value.total)
@@ -319,8 +315,9 @@ function montaGraficoProdutosMaisPesquisadosCloud(dados) {
 	
 
     text.sort(compare);
-
-        data = Highcharts.reduce(text, function (arr, word) {
+	
+	var lines = text.split(/[,\. ]+/g),
+        data = Highcharts.reduce(lines, function (arr, word) {
             var obj = Highcharts.find(arr, function (obj) {
                 return obj.name === word;
             });
