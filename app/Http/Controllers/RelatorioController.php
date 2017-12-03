@@ -86,6 +86,20 @@ class RelatorioController extends Controller
         $produtos = $this->relatorioService->geraRelatorioProdutosMaisPesquisados($parametros);
         return $produtos;
     }
+    
+    public function produtosMaisPesquisadosCloud()
+    {
+        $parametros = Request::except('_token');
+        $parametros['dataIni'] = $this->convertDateToSqlFormat($parametros['dataIni']);
+        $parametros['dataFim'] = $this->convertDateToSqlFormat($parametros['dataFim']);
+
+        if($parametros['dataIni'] > $parametros['dataFim'])
+            return response()->json(['error' => 'A Data Inicial nao pode ser maior que a Data Final.'], 400);
+
+
+        $produtos = $this->relatorioService->geraRelatorioProdutosMaisPesquisadosCloud($parametros);
+        return $produtos;
+    }
 
     public function faturamentoLojaView($idLoja)
     {
