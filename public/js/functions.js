@@ -186,6 +186,7 @@ function montaGraficoLojasMaisVenderam(dados) {
     var dataPoints = [];
     var htmlTabela = '';
     var totalComissao = 0;
+    var totalFaturamento = 0;
 
     $.each(dados, function (index, value) {
         dataPoints[index] = {'y': parseInt(value.valor_vendas), 'label': value.nome_fantasia}
@@ -195,9 +196,10 @@ function montaGraficoLojasMaisVenderam(dados) {
             '<td>R$ '+ parseFloat(value.valor_vendas).toLocaleString()+'</td>' +
             '<td>R$ '+parseFloat(value.comissao_site).toLocaleString()+'</td></tr>';
         totalComissao += parseFloat(value.comissao_site);
+        totalFaturamento += parseFloat(value.valor_vendas);
     });
 
-    htmlTabela += '<tr><td colspan="3"></td><td>Total: <span class="text-success"><strong>R$ '+parseFloat(totalComissao).toLocaleString()   +'</strong></span></td></tr>';
+    htmlTabela += '<tr><td colspan="3"></td><td>Faturamento Total: <span class="text-success"><strong>R$ '+parseFloat(totalFaturamento).toLocaleString()   +'</strong></span></td><td colspan="3"></td><td>Total: <span class="text-success"><strong>R$ '+parseFloat(totalComissao).toLocaleString()   +'</strong></span></td></tr>';
 
     $('#listaLojaMaisVendas').html(htmlTabela);
 
@@ -329,7 +331,7 @@ function montaGraficoFaturamentoLoja(dados) {
         faturamentoTotal += value.faturamento;
     });
 
-    htmlTabela += '<tr><td>Comissão Total: </td><td><span class="text-danger"><strong>R$ '+parseFloat(faturamentoTotal).toLocaleString()+'</strong></span></td></tr>';
+    htmlTabela += '<tr><td>Total: </td><td><span class="text-danger"><strong>R$ '+parseFloat(faturamentoTotal).toLocaleString()+'</strong></span></td></tr>';
 
     $('#listaFaturamentoLoja').html(htmlTabela);
 
