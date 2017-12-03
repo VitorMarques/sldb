@@ -288,9 +288,7 @@ function montaGraficoProdutosMaisPesquisados(dados) {
 		dataPoints: dataPoints
 	}]
 });
-chart.render();
-	
- montaGraficoProdutosMaisPesquisadosCloud(dados);
+chart.render();	
 
 }
 
