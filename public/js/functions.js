@@ -199,7 +199,7 @@ function montaGraficoLojasMaisVenderam(dados) {
         totalFaturamento += parseFloat(value.valor_vendas);
     });
 
-    htmlTabela += '<tr><td>Faturamento Total: <span class="text-success"><strong>R$ '+parseFloat(totalFaturamento).toLocaleString()   +'</strong></span></td><td>Total: <span class="text-success"><strong>R$ '+parseFloat(totalComissao).toLocaleString()   +'</strong></span></td></tr>';
+    htmlTabela += '<tr><td colspan="2"></td><td>Faturamento Total: <span class="text-success"><strong>R$ '+parseFloat(totalFaturamento).toLocaleString()   +'</strong></span></td><td>Total: <span class="text-success"><strong>R$ '+parseFloat(totalComissao).toLocaleString()   +'</strong></span></td></tr>';
 
     $('#listaLojaMaisVendas').html(htmlTabela);
 
@@ -331,7 +331,7 @@ function montaGraficoFaturamentoLoja(dados) {
         faturamentoTotal += value.faturamento;
     });
 
-    htmlTabela += '<tr><td colspan="2"></td><td><td>Total: </td><td><span class="text-danger"><strong>R$ '+parseFloat(faturamentoTotal).toLocaleString()+'</strong></span></td></tr>';
+    htmlTabela += '<tr><td><td>Total: </td><td><span class="text-danger"><strong>R$ '+parseFloat(faturamentoTotal).toLocaleString()+'</strong></span></td></tr>';
 
     $('#listaFaturamentoLoja').html(htmlTabela);
 
