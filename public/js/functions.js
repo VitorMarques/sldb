@@ -305,10 +305,10 @@ function montaGraficoProdutosMaisPesquisadosCloud(dados) {
     var text = [];
 
     $.each(dados, function (index, value) {
-        dataPoints[index] = value.produto
+        text[index] = value.produto
     });
 
-    dataPoints.sort(compare);
+    text.sort(compare);
 
     
     var lines = text.split(/[,\. ]+/g),
