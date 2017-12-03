@@ -328,7 +328,7 @@ function montaGraficoProdutosMaisPesquisadosCloud(dados) {
             return arr;
         }, []);
 
-    Highcharts.chart('relatorioProdutosMaisPesquisadosCloud', {
+    Highcharts.chart('chartContainerCloud', {
         series: [{
             type: 'wordcloud',
             data: data,
