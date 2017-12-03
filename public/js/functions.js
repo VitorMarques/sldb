@@ -329,7 +329,7 @@ function montaGraficoFaturamentoLoja(dados) {
         faturamentoTotal += value.faturamento;
     });
 
-    htmlTabela += '<tr><td>Total: </td><td><span class="text-danger"><strong>R$ '+parseFloat(faturamentoTotal).toLocaleString()+'</strong></span></td></tr>';
+    htmlTabela += '<tr><td>Comissão Total: </td><td><span class="text-danger"><strong>R$ '+parseFloat(faturamentoTotal).toLocaleString()+'</strong></span></td></tr>';
 
     $('#listaFaturamentoLoja').html(htmlTabela);
 
