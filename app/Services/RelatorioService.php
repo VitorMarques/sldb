@@ -60,7 +60,7 @@ class RelatorioService extends Service
 
     }
     
-    public function geraRelatorioProdutosMaisPesquisados($parametros)
+    public function geraRelatorioProdutosMaisPesquisadosCloud($parametros)
     {
 
         $termosPesquisa = DB::select('SELECT distinct text
