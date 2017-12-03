@@ -199,7 +199,7 @@ function montaGraficoLojasMaisVenderam(dados) {
         totalFaturamento += parseFloat(value.valor_vendas);
     });
 
-    htmlTabela += '<tr><td colspan="2"></td><td>Faturamento Total: <span class="text-success"><strong>R$ '+parseFloat(totalFaturamento).toLocaleString()   +'</strong></span></td><td>Total: <span class="text-success"><strong>R$ '+parseFloat(totalComissao).toLocaleString()   +'</strong></span></td></tr>';
+    htmlTabela += '<tr><td colspan="2"></td><td>Faturamento Total: <span class="text-success"><strong>R$ '+parseFloat(totalFaturamento).toLocaleString()   +'</strong></span></td><td>Comissão Total: <span class="text-success"><strong>R$ '+parseFloat(totalComissao).toLocaleString()   +'</strong></span></td></tr>';
 
     $('#listaLojaMaisVendas').html(htmlTabela);
 
