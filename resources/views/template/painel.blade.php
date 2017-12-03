@@ -37,5 +37,7 @@
     <script src="{{ asset('js/canvasjs.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('locales/bootstrap-datepicker.pt-BR.min.js') }}"></script>
+    <script src="{{ asset('js/highcharts.js') }}"></script>
+    <script src="{{ asset('js/wordcloud.js') }}"></script>
 </body>
 </html>
