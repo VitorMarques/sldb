@@ -49,7 +49,7 @@
     </div>
     
      <div id="relatorioProdutosMaisPesquisadosCloud" class="col-sm-12" style="margin-top:80px;display: {{$display}}">
-        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+        <div id="chartContainerCloud" style="height: 370px; width: 100%;"></div>
     </div>
 
 @endsection
