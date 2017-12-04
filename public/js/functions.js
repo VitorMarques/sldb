@@ -217,7 +217,7 @@ function montaGraficoLojasMaisVenderam(dados) {
             indexLabel: "R$ {y}",
             indexLabelFontColor: "#5A5757",
             indexLabelPlacement: "outside",
-            yValueFormatString:  "R$#,##0.##",
+            yValueFormatString:  "#,##0.##",
             dataPoints: dataPoints
         }]
     });
