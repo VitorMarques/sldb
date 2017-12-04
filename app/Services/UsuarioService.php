@@ -26,7 +26,7 @@ class UsuarioService extends Service
 
     public function listaCompras($id)
     {
-        return Compra::where('user_id', '=', $id)->orderBy('data', 'DESC')->get()->paginate(10);
+        return Compra::where('user_id', '=', $id)->orderBy('data', 'DESC')->paginate(10);
     }
 
     public function buscaCompra($compraId)
