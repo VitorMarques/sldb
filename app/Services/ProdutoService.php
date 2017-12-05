@@ -7,7 +7,6 @@
  */
 
 namespace sldb\Services;
-namespace App\Http\Controllers;
 
 use sldb\Models\Categoria;
 use sldb\Models\Compra;
