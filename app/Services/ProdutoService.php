@@ -15,9 +15,6 @@ use sldb\Models\PesquisaProduto;
 use sldb\Models\Produto;
 
 
-use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
-
 
 class ProdutoService extends Service
 {
@@ -141,11 +138,7 @@ AND t1.id = t2.loja_id;
             ->orWhere('bairro', '=', $texto)
             ->orWhere('cidade', '=', $texto)
             ->orWhere('tb_produto.nome', 'like', '%'.$texto.'%')->paginate(20);*/
-        
-         DB::table('tb_pesquisa_produto')->insert(
-                ['text' => $texto, 'created_at' => now(), 'updated_at' => now()]
-            );
-
+   
 
         return $produtos;
     }
